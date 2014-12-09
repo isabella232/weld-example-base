@@ -6,10 +6,11 @@
   <Set name="contextPath">/</Set>
   <Set name="war"><Property name="jetty.webapps" default="."/>/weld-numberguess.war</Set>
 
-  <!-- relax the classloader to allow weld to see jetty server classes -->
-  <!--
-  <Call name="addServerClass">
-    <Arg>-org.eclipse.jetty.servlet.ServletContextHandler</Arg>
+  <!-- relax the classloader to allow weld to see jetty server and servlet classes -->
+  <Call name="prependServerClass">
+    <Arg>-org.eclipse.jetty.server.</Arg>
   </Call>
-   -->
+  <Call name="prependServerClass">
+    <Arg>-org.eclipse.jetty.servlet.</Arg>
+  </Call>
 </Configure>
