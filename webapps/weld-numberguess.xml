@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure_9_0.dtd">
+
+<Configure id="numberguess-wac" class="org.eclipse.jetty.webapp.WebAppContext">
+  <!-- setup this app at the root context -->
+  <Set name="contextPath">/</Set>
+  <Set name="war"><Property name="jetty.webapps" default="."/>/weld-numberguess.war</Set>
+
+  <!-- relax the classloader to allow weld to see jetty server classes -->
+  <!--
+  <Call name="addServerClass">
+    <Arg>-org.eclipse.jetty.servlet.ServletContextHandler</Arg>
+  </Call>
+   -->
+</Configure>
